@@ -42,6 +42,7 @@ print(y_train.shape)
 print(y_test.shape)
 
 # 4 建立决策树模型
+# 4 建立决策树模型
 from sklearn.tree import DecisionTreeClassifier
 
 dtc = DecisionTreeClassifier(criterion="entropy", max_depth=12, min_samples_leaf=2)
