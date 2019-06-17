@@ -2,7 +2,7 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("4.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("111.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
@@ -28,8 +28,8 @@ print(sale1Data.columns)
 # y = sale1Data["发行人最新评级"]
 # x = sale1Data.drop(columns=["1", "2", "3"], axis=1)
 # y = sale1Data["17"]
-x = sale1Data.drop(columns=["t", "a", "b"], axis=1)
-y = sale1Data["t"]
+x = sale1Data.drop(columns=["x", "a", "b"], axis=1)
+y = sale1Data["x"]
 
 # 3 特征工程
 # 数据集切分
@@ -74,4 +74,4 @@ joblib.dump(dtc, "creditLevel.pkl")
 from sklearn.tree import export_graphviz
 
 export_graphviz(dtc, out_file="creditLevel.dot", feature_names=x.columns,
-                class_names=["C", "CC", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
+                class_names=["A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
