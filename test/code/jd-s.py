@@ -49,7 +49,7 @@ dtc.fit(x_train, y_train)
 
 # 4 加载模型
 # from sklearn.externals import joblib
-# dtc = joblib.load("creditLevel.pkl")
+# dtc = joblib.load("jd-s.pkl")
 
 # 5 模型预测
 y_pred = dtc.predict(x_test)
@@ -68,10 +68,10 @@ print("conputetion matrix:", classification_report(y_test, y_pred))
 # 7 保存模型
 from sklearn.externals import joblib
 
-joblib.dump(dtc, "creditLevel.pkl")
+joblib.dump(dtc, "jd-s.pkl")
 
 # 8 模型可视化
 from sklearn.tree import export_graphviz
 
-export_graphviz(dtc, out_file="creditLevel.dot", feature_names=x.columns,
+export_graphviz(dtc, out_file="jd-s.dot", feature_names=x.columns,
                 class_names=["A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
