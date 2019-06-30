@@ -2,7 +2,7 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("jd-d.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("data/jd-s.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
@@ -28,8 +28,8 @@ print(sale1Data.columns)
 # y = sale1Data["发行人最新评级"]
 # x = sale1Data.drop(columns=["1", "2", "3"], axis=1)
 # y = sale1Data["17"]
-x = sale1Data.drop(columns=["f", "a", "b"], axis=1)
-y = sale1Data["f"]
+x = sale1Data.drop(columns=["bm", "a", "b"], axis=1)
+y = sale1Data["bm"]
 
 # 3 特征工程
 # 数据集切分

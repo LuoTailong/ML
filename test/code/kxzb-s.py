@@ -2,13 +2,13 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("jd-s.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("data/kxzb-s.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
 print(sale1Data.ndim)
 print(sale1Data.info())
-print(sale1Data.head())
+# print(sale1Data.head())
 print(sale1Data.index)
 print("------------------------")
 print(sale1Data.columns)
@@ -74,4 +74,4 @@ joblib.dump(dtc, "creditLevel.pkl")
 from sklearn.tree import export_graphviz
 
 export_graphviz(dtc, out_file="creditLevel.dot", feature_names=x.columns,
-                class_names=["A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
+                class_names=["C", "CC", "A-", "A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)

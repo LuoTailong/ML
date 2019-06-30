@@ -2,13 +2,13 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("kxzb-s.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("data/kxzb-d.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
 print(sale1Data.ndim)
 print(sale1Data.info())
-# print(sale1Data.head())
+print(sale1Data.head())
 print(sale1Data.index)
 print("------------------------")
 print(sale1Data.columns)
@@ -28,8 +28,8 @@ print(sale1Data.columns)
 # y = sale1Data["发行人最新评级"]
 # x = sale1Data.drop(columns=["1", "2", "3"], axis=1)
 # y = sale1Data["17"]
-x = sale1Data.drop(columns=["bm", "a", "b"], axis=1)
-y = sale1Data["bm"]
+x = sale1Data.drop(columns=["ch", "a", "b"], axis=1)
+y = sale1Data["ch"]
 
 # 3 特征工程
 # 数据集切分
