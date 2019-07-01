@@ -2,7 +2,7 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("data/jd-s.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("jd-s.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
