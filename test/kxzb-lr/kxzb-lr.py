@@ -26,3 +26,5 @@ print(y_pred)
 
 print("model in trainset score is:", lr.score(x_train, y_train))
 print("model in testset score is:", lr.score(x_train, y_train))
+
+
