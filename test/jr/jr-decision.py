@@ -2,9 +2,9 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("jr-lr.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("jr-decision.csv", sep=",", error_bad_lines=False)
+sale1Data.fillna(0, inplace=True)
 sale1Data.dropna(inplace=True)
-print(sale1Data)
 print(sale1Data.shape)
 print(sale1Data.ndim)
 print(sale1Data.info())
@@ -14,16 +14,17 @@ print("------------------------")
 print(sale1Data.columns)
 
 # 遗失值插补
-from sklearn.preprocessing import Imputer
-my_imputer = Imputer()
-data_imputed = my_imputer.fit_transform(sale1Data)
-print(type(data_imputed))
-# array转换成df
-sale1Data_imputed = pd.DataFrame(data_imputed, columns=sale1Data.columns)
-print(sale1Data_imputed)
+# from sklearn.preprocessing import Imputer
+#
+# my_imputer = Imputer()
+# data_imputed = my_imputer.fit_transform(sale1Data)
+# print(type(data_imputed))
+# # array转换成df
+# sale1Data_imputed = pd.DataFrame(data_imputed, columns=sale1Data.columns)
+# print(sale1Data_imputed)
 
-x = sale1Data.drop(columns=["x", "a", "b"], axis=1)
-y = sale1Data["x"]
+x = sale1Data.drop(columns=["f", "a", "b"], axis=1)
+y = sale1Data["f"]
 
 # 3 特征工程
 # 数据集切分
@@ -41,9 +42,10 @@ from sklearn.tree import DecisionTreeClassifier
 dtc = DecisionTreeClassifier(criterion="entropy", max_depth=12, min_samples_leaf=2)
 dtc.fit(x_train, y_train)
 
+
 # 4 加载模型
 # from sklearn.externals import joblib
-# dtc = joblib.load("creditLevel.pkl")
+# dtc = joblib.load("jr.pkl")
 
 # 5 模型预测
 y_pred = dtc.predict(x_test)
@@ -62,10 +64,10 @@ print("conputetion matrix:", classification_report(y_test, y_pred))
 # 7 保存模型
 from sklearn.externals import joblib
 
-joblib.dump(dtc, "creditLevel.pkl")
+joblib.dump(dtc, "jr.pkl")
 
 # 8 模型可视化
 from sklearn.tree import export_graphviz
 
-export_graphviz(dtc, out_file="creditLevel.dot", feature_names=x.columns,
-                class_names=["A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
+export_graphviz(dtc, out_file="jr.dot", feature_names=x.columns,
+                class_names=["C", "CC", "B", "BBB", "BBB+", "A-", "A", "A+", "AA-", "AA", "AA+", "AAA"], filled=True)
