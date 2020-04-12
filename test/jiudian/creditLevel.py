@@ -23,11 +23,6 @@ print(sale1Data.columns)
 # sale1Data_imputed = pd.DataFrame(data_imputed, columns=sale1Data.columns)
 # print(sale1Data_imputed)
 
-# 2 数据处理
-# x = sale1Data.drop(columns=["发行人最新评级", "证券代码", "证券简称"], axis=1)
-# y = sale1Data["发行人最新评级"]
-# x = sale1Data.drop(columns=["1", "2", "3"], axis=1)
-# y = sale1Data["17"]
 x = sale1Data.drop(columns=["x", "a", "b"], axis=1)
 y = sale1Data["x"]
 

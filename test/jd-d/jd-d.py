@@ -3,6 +3,7 @@ import pandas as pd
 
 # 1 导入数据
 sale1Data = pd.read_csv("jd-d.csv", sep=",", error_bad_lines=False)
+sale1Data.interpolate(inplace=True)
 sale1Data.dropna(inplace=True)
 print(sale1Data)
 print(sale1Data.shape)
