@@ -63,7 +63,7 @@ print("model in testset score is %.2f" % (dtc.score(x_test, y_test)))
 from sklearn.metrics import confusion_matrix, classification_report
 
 print("confusion matrix:", confusion_matrix(y_test, y_pred))
-print("conputetion matrix:", classification_report(y_test, y_pred))
+print("computation matrix:", classification_report(y_test, y_pred))
 
 # 7 保存模型
 from sklearn.externals import joblib

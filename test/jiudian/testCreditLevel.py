@@ -2,10 +2,10 @@
 import pandas as pd
 
 # 1 导入数据
-sale1Data = pd.read_csv("4.csv", sep=",", error_bad_lines=False)
+sale1Data = pd.read_csv("111.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
-x = sale1Data.drop(columns=["t", "a", "b"], axis=1)
-y = sale1Data["t"]
+x = sale1Data.drop(columns=["x", "a", "b"], axis=1)
+y = sale1Data["x"]
 
 # 3 特征工程
 # 数据集切分
@@ -33,4 +33,4 @@ print("model in dataset score is %.2f" % (dtc.score(x, y)))
 from sklearn.metrics import confusion_matrix, classification_report
 
 print("confusion matrix:", confusion_matrix(y, y_pred))
-print("conputetion matrix:", classification_report(y, y_pred))
+print("computation matrix:", classification_report(y, y_pred))

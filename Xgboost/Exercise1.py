@@ -62,3 +62,6 @@ xgb.plot_tree(bst, num_trees=1, rankdir='LR')
 pyplot.show()
 xgb.to_graphviz(bst, num_trees=0)
 xgb.to_graphviz(bst, num_trees=1)
+
+import numpy as np
+np.random.randn()
