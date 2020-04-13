@@ -4,7 +4,7 @@ import pandas as pd
 # 1 导入数据
 sale1Data = pd.read_csv("111.csv", sep=",", error_bad_lines=False)
 sale1Data.dropna(inplace=True)
-print(sale1Data)
+# print(sale1Data)
 print(sale1Data.shape)
 print(sale1Data.ndim)
 print(sale1Data.info())
